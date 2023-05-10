@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <hr />
+    <div class="create-post-container col-md-9">
+      <form class="post-form" [formGroup]="createPostForm" (ngSubmit)="createPost()">
+        <div class="form-group">
+          <div class="create-post-heading">Create new Post / Question</div>
+          <hr />
+          <input type="text" [formControlName]="'postName'" class="form-control" style="margin-top: 5px"
+                 placeholder="Title">
+          <input type="text" [formControlName]="'description'" class="form-control" style="margin-top: 5px"
+                 placeholder="Description">
+          <div>
+            <input type="checkbox" [formControlName]="'checkbox'" style="margin-top: 15px">
+            Question
+          </div>
+          <select class="form-control" style="margin-top: 10px" [formControlName]="'certificationName'">
+            <option value="" selected disabled>Select Certification</option>
+            <option *ngFor="let certification of certifications">{{certification.name}}</option>
+          </select>
+          <span>
+              <div style="margin-top: 5px" class="float-right">
+                <button (click)="discardPost()" class="btnDiscard">Discard</button>
+                <button class="btnCreatePost">Post</button>
+              </div>
+            </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

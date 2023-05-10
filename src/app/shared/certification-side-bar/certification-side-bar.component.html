@@ -1,0 +1,8 @@
+<div class="certification-view">
+  <div style="color: black; font-weight: bold; text-align: center;">Browse certifications available</div>
+  <hr />
+  <span *ngFor="let cert of certifications">
+        <span class="subreddit-text"><a href="/view-subreddit/{{cert.id}}">{{cert.name}}</a></span>
+        <hr />
+    </span>
+</div>

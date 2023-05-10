@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="flex-grow-1">
+      <a aria-label="Home" class="logo" routerLink="/">
+        <img src="../../assets/image/aws-logo.png" class="aws-image">
+        <span class="aws-text">
+                  AWS Tester
+              </span>
+      </a>
+    </div>
+    <div class="flex-grow-1 float-right">
+      <div *ngIf="isLoggedIn" class="float-right">
+        <button class="userdetails" id="dropdownBasic1" (click)="goToUserProfile()">
+          <img class="account-icon" src="assets/image/profile.jpg">
+          {{username}}
+        </button>
+      </div>
+      <div *ngIf="!isLoggedIn">
+        <a routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
+        <a routerLink="/login" class="float-right login mr-2">Login</a>
+      </div>
+    </div>
+  </nav>
+</header>
